@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<title>CySec 101</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans">
+<style>
+body,h1,h2,h3,h4,h5 {font-family:sans-serif, "Raleway";}
+p, ul{font-family:"Raleway",verdana;}
+blockquote{font-family:"PT Sans", verdana;}
+</style>
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+
+<body class="w3-light-grey">
+
+
+<nav>
+ <a href="/index.html"><div id="logo">
+     <img src="/img/logo/favicon.png" alt="logo" id="imglogo">
+    <h5 class="ptSans" id="navLogo">CySec 101</h5>
+ </div></a>
+ <ul>
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/index/introduction.html">About</a></li>
+</ul></nav>
+
+ <main class="w3-content">
+<img  id="imgmain" src="../img/DDoS-wallpaper.png" alt="A samsung Smart fridge" class=" img100 imgmain">
+
+<!-- Grid -->
+<div class="w3-row divbigmomma">
+
+    <!-- Blog entry -->
+  
+<div class="w3-card-4 w3-white" id="divarticle">
+    <div class="w3-container">
+  <header><h1><b><i>"La rebelión de las máquinas" y ataques DDoS</i></b></h1></header>
+      <h5>Cómo hicieron colapsar Amazon usando DVRs (grabadoras) y heladeras, <span class="w3-opacity">5 de noviembre 2020</span></h5>
+    </div>
+
+    <div class="w3-container" id="text">
+
+
+<p>La denegación de servicio es cuando no se puede acceder a una página, generalmente porque está fuera de servicio o simplemente muy ralentizada. Esto pasa de manera natural cada vez que un servidor recibe más peticiones de las que puede manejar al mismo tiempo, como es el ejemplo de la página de la <a href=https://www.ubaxxicampusvirtual.uba.ar/>UBA</a> cada vez que se intenta rendir un examen virtual (algunos sabrán de lo que hablo). Un ataque de denegación de servicio distribuido por el otro lado (DDoS por sus siglas en inglés), es cuando la sobrecarga del servidor es llevada a cabo de manera intencional. Un ejemplo sería mandar miles o millones de peticiones a un servidor hasta que exceda su capacidad y no pueda lidiar con la totalidad.</p>
+
+<p>Otro ejemplo, esta vez llevado más a la vida real, es el de uno de mis entrevistados, el cual por razones obvias decidió permanecer anónimo. Se trata de un experto en ciberseguridad al que le pregunté si alguna vez consideró cruzar la línea de la ética y pasarse al otro lado, ya que a medida que iba teniendo más entrevistas, notaba una tendencia general en la gente que se destacaba por un interés en las técnicas de ataque. Y si bien para estudiar ciberseguridad uno debe saber cómo atacan los demás, también es fácil verse tentado. En el caso particular del entrevistado, me mencionó haber llevado a cabo un DDoS ya hace años cuando todavía estaba en el colegio.</p>
+
+<p>Como me contó, resulta que un día en el colegio él no tenía ganas de estudiar, por lo que se decidió por tirar abajo la red del colegio mediante un DDoS. No es una tarea fácil por supuesto, teniendo en cuenta el tamaño de la red (arriba de 200 ordenadores), pero siendo honestos, las botnets son increíblemente fáciles de adquirir. Hoy en día todo lo que necesita uno para lanzar un DDoS no es más que el conocimiento y el poder para llevarlo a cabo. En ese entonces podemos estar seguros de que el conocimiento para lanzar el ataque lo tenía, y como dije antes, las botnets están al alcance de la mano, disponibles en la deep web.</p>
+
+<p>Al día de hoy esta persona trabaja en ciberseguridad y es de los mejores en lo que hace. Y esto concuerda con el testamente de <a href=https://www.linkedin.com/in/santiago-barclay-328784118/>Santiago Barclay</a>, otro de los entrevistados quien dice que, en el rubro de la ciberseguridad, todos aquellos que son considerados expertos alguna vez estuvieron del otro lado de la ley. Y respecto al que permanecerá anónimo, confesó haber realizado cosas mucho peores que dejar a todo su colegio sin internet, pero son cosas que prefiere callar.</p>
+
+<br><hr><br>
+<img src="../img/DDoS-attack-diagram.png" alt="A diagram showing a ddos structure" class="img100">
+
+<p>Esta botnet de la que hablé y aparece en la imagen es una red de miles de ordenadores distintos utilizados para enviar suficientes peticiones a un servidor como para sobrecargarlo, incluso a los más importantes como los de Spotify o Amazon. Estos ordenadores que pertenecen a la botnet, reciben el nombre de bots y suelen ser en realidad dispositivos de cualquier persona inocente, pero que fueron infectados con malware para que actúen según les indique el atacante. Llegado este punto muchos de ustedes se deben estar preguntando ¿qué tienen que ver las heladeras con todo esto? Y resulta que más de lo que creen, pero para eso habría que mencionar primero la “Internet de las Cosas” (IoT por sus siglas en inglés).</p>
+
+<p>La internet de las cosas es el nombre que se le da a la interconectividad de los dispositivos, cuando la conexión deja de ser entre un usuario y un servidor para pasar a ser entre una computadora y una impresora, o el termostato y el celular, el humano desaparece de la ecuación. Esta interconectividad donde cada vez más dispositivos acceden a internet, si bien fascina a los aficionados a la tecnología, también asusta a los expertos en la misma. Se debe tener en cuenta que la internet es una red de comunicación, y si tu termostato tiene acceso a internet, el internet puede tener acceso a tu termostato. Obviamente, esto suena como una exageración, y en el caso del termostato puede serlo. Pero si un atacante puede ingresar a tu computadora la cual tiene décadas de esfuerzo en ciberseguridad integrada, ¿le sería realmente difícil ingresar a tu Smart TV?</p>
+<p>La verdad es que tanto las Smart TVs como las impresoras o celulares pueden ser hackeados. Hasta las <a href=https://www.securityweek.com/thousands-3d-printers-exposed-remote-attacks>impresoras 3D fueron hackeadas</a> en el pasado, otorgando acceso a la cámara integrada que algunas poseen. Hoy en día si un dispositivo está conectado a internet, es muy difícil determinar con 100% de certeza si es impenetrable, y de evidencia está cada dispositivo que dijo tener seguridad inquebrantable en el pasado, y falló ante la realidad. Y para los que creen que un hackeo a su heladera inteligente no es más que una molestia y no presenta ningún peligro, deberían tener en cuenta que sí presenta un peligro para los demás, como explica <a href=https://www.cnet.com/news/internet-outage-dyn-ddos-attack-twitter-spotify/>Cnet.com</a>, el artículo de Financial Times “<a href=https://www.ft.com/content/2c17ff5e-4f02-11e8-ac41-759eee1efb74>When Fridges Attack</a>” y el de TechTimes, “<a href=https://www.techtimes.com/articles/183339/20161024/massive-dyn-ddos-attack-experts-blame-smart-fridges-dvrs-and-other-iot-devices-why-your-internet-went-down.htm>Massive Dyn DDOS Attack: Experts Blame Smart Fridges, DVRs And Other IoT Devices Why Your Internet Went Down</a>”.</p>
+
+<img src="../img/smart-fridge.jpg" alt="A smart fridge" class="img100">
+<p>Para los curiosos, pero no tanto como para leer los links: 100 000 dispositivos como heladeras, grabadoras, Smart TV e impresoras fueron infiltrados para formar una botnet que fue usada para un DDoS, llevando a la caída de Twitter, Reddit, Etsy, Spotify, Netflix y GitHub, Tumblr, Soundcloud, Shopify, Airbnb, PayPal y Yelp, <a href= http://www.techtimes.com/articles/183218/20161021/cyber-attack-takes-down-netflix-twitter-spotify-more-east-coast.htm >para nombrar algunas</a>. En otras palabras, la falta de seguridad en estos dispositivos que parecen inofensivos, causó la caída de todos estos sitios en tan solo unos minutos en octubre de 2016. Lo que es más importante, la mayoría de estos dispositivos no presentaron fallas de seguridad importantes, sino que los propietarios fallaron en configurarlos como deberían. Este es el caso de las grabadoras de video utilizadas en el ataque. Estas grabadoras son las que recopilan el video de las cámaras de seguridad y lo guardan al menos durante unos días en caso de necesitarlo. El error de los dueños estuvo en no establecer una contraseña para estas grabadoras, sino usar la predeterminada de fábrica; una contraseña fácil de descubrir y que otorgaba el acceso a miles de dispositivos, así haciendo posible el ataque DDoS sin precedentes (el más grande de la historia hasta 2018).</p>
+
+<p>Para otorgar algo de contexto, los ataques DDoS suelen estar dirigidos a sitios web como Amazon o Twitter, pero la particularidad de este es que en vez de dirigirse a un sitio se dirigió a <a href=https://account.dyn.com/>DynDNS</a>, la empresa de DNS más grande de Estados Unidos. Esta empresa también ofrecía el servicio de hosting a estas empresas, llevando a que la inoperancia de los servidores de Dyn cause la inoperancia de los sitios web que dependían de sus servidores.</p>
+
+<br><hr><br>
+<img src="../img/DDoS-mitigation.jpg" alt="ddos mitigation diagram" class="img100">
+<h4>¿Cómo defenderse ante un DDoS?</h4>
+<p>La verdad es que uno como usuario nunca recibiría un ataque DDoS, podría ver ocurrir alguno, pero no hay nada que pueda hacer al respecto. Sin embargo, lo que uno sí puede hacer es proteger sus dispositivos, todos ellos, incluidas las cámaras y la heladera, para que nunca formen parte de un ataque contra terceros. Esto es realmente importante ahora que el código maligno que se empleó para llevar a cabo el ataque está al acceso de todo el mundo en internet, y cualquiera que quiera emplear un ataque similar, si tiene la mano de obra necesaria, puede hacerlo.</p>
+<p>Además, si tienen curiosidad sobre cómo las empresas combaten los ataques de tipo DDoS entonces pueden ver la página de <a href=https://www.imperva.com/products/ddos-protection-services/>Imperva</a>, una empresa que ofrece este servicio. En pocas palabras, ante la presencia de un DDoS automáticamente se redirige el tráfico a la nube (donde hay otros servidores con mayor capacidad). Una vez en la nube los servidores externos analizan los pedidos, filtrando los malignos y finalmente se redirigiendo los benignos que son en realidad paquetes de usuarios reales, al servidor interno del sitio. De esta manera una empresa puede continuar funcionando y estando abierta al público sin verse afectada por un DDoS, como pasó con GitHub durante el <a href=https://citizenlab.ca/2015/04/chinas-great-cannon/>Gran Cañón Chino</a>.
+
+<br><hr><br>
+<img src="../img/great-cannon.png" alt="china’s great cannon" class="img100">
+<h4>El Gran Cañón Chino</h4>
+<p>”El Gran Cañón Chino” es el nombre que recibe el ataque DDoS más grande que sufrió <a href= https://github.com/ >GitHub</a> en su historia. Este ataque comenzó en realidad en la página <a href=https://en.greatfire.org/>GreatFire.org</a>, fuertes opositores a la censura china del internet, como lo declara su lema: <span>We monitor and challenge internet censorship in China</span>. Para los que no están al tanto, el gobierno chino limita los sitios web a los que pueden acceder los chinos como por ejemplo Google, YouTube, Netflix, Instagram <a href=https://en.wikipedia.org/wiki/List_of_websites_blocked_in_mainland_China>y muchos más</a>. GreatFire.org combate esta censura, creando maneras para que los ciudadanos de China puedan acceder a estos sitios, lo que probablemente llevó a las represalias de parte del gobierno, <a href=https://en.greatfire.org/blog/2015/mar/chinese-authorities-compromise-millions-cyberattacks>como lo explica GreatFire</a>.</p>
+
+<p>Alrededor de una semana después de que inició el DDoS contra la página de GreatFire, 18 de marzo de 2016, el mismo se extendió a páginas dentro de GitHub, incluyendo la de GreatFire y otros opositores al gobierno chino como The New York Times. Y no fue hasta unos días después de que atacaron GitHub que se descubrió el origen del ataque, <a href= https://drive.google.com/file/d/0ByrxblDXR_yqeUNZYU5WcjFCbXM/view >en China</a>. Al parecer, Baidu, el equivalente chino de Google, era la fuente del problema. Una pequeña fracción de las personas que accedían a Baidu desde cualquier parte del mundo, que siguen siendo unos cuantos millones, generaban también una petición a GitHub, específicamente las páginas de GitHub mencionadas anteriormente. Esto llevaba a que esos usuarios naveguen por Baidu sin problema alguno, mientras su ordenador estaba siendo usado como parte de una botnet para atacar estos sitios con ideología distinta a la del gobierno chino. Y tras más investigación, se dieron cuenta que no era solo Baidu el problema, sino <a href= https://www.xataka.com/aplicaciones/el-gran-canon-la-supuesta-herramienta-online-con-la-que-china-quiere-reforzar-la-censura >cualquier página donde aparezcan los anuncios de Baidu</a> (Así como Google, ellos trabajan en la industria de los ads).</p>
+
+<p>Tras unas cuantas acusaciones, Baidu declaró que su código estaba completamente limpio y no contenía malware adjuntado. Y no fue hasta unos días después que se “descubrió” que era el gobierno chino el que había insertado el malware, interceptando los mensajes y agregándole un archivo JavaScript. China había realizado un ciberataque sin precedentes, y había encontrado la manera de utilizar usuarios como armas a su favor, sin que siquiera lo sepan.</p>
+
+
+
+</div>
+</div>
+
+<!-- END BLOG ENTRIES -->
+
+<!-- Introduction menu -->
+  <!-- About Card -->
+  <div class="w3-card w3-container w3-light-grey w3-border-light-grey" id="divright">
+      <div id="textright">
+      <h4><b>Índice</b></h4>
+     
+     <ul class="indexul">
+         <a href="/index.html"><li class="indexel">Home</li></a>
+         <a href="/index/introduction.html"><li class="indexel">Introducción</li></a>
+         <li class="indexli">Artículos
+            <ul>
+             <a href="/articles/problem-with-passwords.html"><li class="indexel">Las contraseñas no son débiles, nosotros lo somos</li></a>
+             <a href="/articles/http-vs-https.html"><li class="indexel">La verdad sobre los sitios "No seguros"</li></a>
+             <a href="/articles/phishing.html"><li class="indexel">Phishing, la verdadera amenaza al navegar por internet</li></a>
+             <a href="/articles/man-in-the-middle.html"><li class="indexel">Man in the Middle y WiFi Pineapples</li></a>
+             <a href="/articles/DDoS.html"><li class="indexel">"La rebelión de las máquinas" y ataques DDoS</li></a>
+             <a href="/articles/why-anonymity-myth.html"><li class="indexel">El anonimato y el negocio de la información</li></a>
+             <a href="/articles/brute-force-attacks.html"><li class="indexel">Ataques de fuerza bruta y los diccionarios de contraseñas</li></a>
+             <a href="/articles/perks-of-being-a-wallflower.html"><li class="indexel">"Las (des)ventajas de ser invisible"</li></a>
+             <a href="/articles/human-behavior.html"><li class="indexel">El comportamiento humano y el anonimato</li></a>
+            </ul>
+         </li>
+         <a href="/index/surveys.html"><li class="indexel">Encuestas</li></a>
+         <a href="/index/conclusion.html"><li class="indexel">Conclusión</li></a>
+         <a href="/index/bibliography.html"><li class="indexel">Bibliografía</li></a>
+     </ul>
+     
+      </div>
+    </div>
+  
+<!-- END Introduction Menu -->
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</main>
+
+<!-- Footer -->
+<footer class="w3-container footer">
+    <div>
+  <h5><b>Contacto:</b></h5><p>Juan Manuel Díaz, <a href="mailto:juanma.diaz02@gmail.com">juanma.diaz02@gmail.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

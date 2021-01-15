@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<title>CySec 101</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans">
+<style>
+body,h1,h2,h3,h4,h5 {font-family:sans-serif, "Raleway";}
+p, ul{font-family:"Raleway",verdana;}
+blockquote{font-family:"PT Sans", verdana;}
+</style>
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+
+<body class="w3-light-grey">
+
+
+<nav>
+ <a href="/index.html"><div id="logo">
+     <img src="/img/logo/favicon.png" alt="logo" id="imglogo">
+    <h5 class="ptSans" id="navLogo">CySec 101</h5>
+ </div></a>
+ <ul>
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/index/introduction.html">About</a></li>
+</ul></nav>
+<main class="w3-content">
+<img src="../img/brute-force-code.png" alt="what a successful brute force attack looks like" id="imgmain" class="img100 imgmain">
+
+<!-- Grid -->
+<div class="w3-row divbigmomma">
+
+    <!-- Blog entry -->
+  
+<div class="w3-card-4 w3-white" id="divarticle">
+    <div class="w3-container">
+  <header><h1><b>Ataques de fuerza bruta y los diccionarios de contraseñas</b></h1></header>
+      <h5>Análisis sobre cómo se llevan a cabo y la industria detrás, <span class="w3-opacity">8 de noviembre 2020</span></h5>
+    </div>
+
+    <div class="w3-container" id="text">
+
+<p>Ataque de Fuerza Bruta es el nombre que reciben aquellos casos donde los atacantes realizan millones de intentos para conseguir credenciales ajenas para ingresar sesión a un sitio. En palabras simples, es como si el atacante tuviese el mail asociado a tu cuenta de twitter y realizara millones de intentos, uno por uno, hasta descubrir tu contraseña. Un ejemplo del día a día sería lo que hace mi mamá, analista de sistemas, cada día cuando quiere llamarme. Prueba con los nombres de sus hijos, uno por uno, hasta que finalmente dice el mío. No es un método rápido, pero definitivamente es eficiente.</p>
+
+<p>Hoy en día casi todas las páginas suelen estar preparadas para este tipo de ataques y toman medidas para prevenirlos, como por ejemplo limitar la cantidad de intentos fallidos que puede hacer un usuario para ingresar sesión. Debido a esto, se puede decir que todos los ataques de fuerza bruta se llevan a cabo de manera offline, corroborando las respuestas con una base de datos de combo lists. Una combo list, como se menciona en el artículo sobre <a href="problem-with-passwords.html">la inseguridad de las contraseñas</a>, es una lista de mails y contraseñas, algo similar a la foto a continuación.</p>
+
+<a href=https://combolist.org/generate><img src="../img/generated-combo.png" alt="auto generated combolist" class="alignCenter img100 border2"></a>
+
+<p>La mayor diferencia entre una combolist y la foto es que las listas suelen traer las contraseñas hasheadas, como se guardan en las páginas web. “Hashear” una contraseña es aplicarle una función (un hash) para que sea ilegible. Un ejemplo de un hash sería MD5, una fórmula muy popular que se aplicaba para transformar las contraseñas, pero que hoy en día cayó en desuso por la facilidad de averiguar la contraseña a partir del hash de la misma. Como demostración, si le aplica el hash MD5 al hilo “p@ssword”, procedimiento que se puede hacer en <a href="https://www.md5hashgenerator.com/">md5hashgenerator.com</a>, daría como resultado “90f2c9c53f66540e67349e0ab83d8cd0”, un hilo incomprensible que con solo verlo no alcanza para determinar la contraseña que el corresponde.</p>
+
+<p>La razón por la que utilizamos los hashes en primer lugar es para que tanto empleados de la empresa como los atacantes que ganen acceso a la base de datos, no puedan ver tu contraseña. El concepto detrás de todo esto es que el hash que se obtiene de una contraseña se puede obtener en microsegundos, mientras determinar la contraseña a partir de un hash (el camino inverso) es un proceso que podría tardar miles de años, dependiendo de la seguridad del mismo. Cuando mencioné que el MD5 cayó en desuso, es porque las técnicas de encriptación que utiliza ya quedaron en el pasado, y lo que es más importante, el hash estuvo vigente tanto tiempo, desde 1991, que ya se saben muchas de las correlaciones entre contraseñas y hashes. Y como ejemplo de esto está el hash calculado antes, 90f2c9c53f66540e67349e0ab83d8cd0, que si se busca en google se encuentra que el hilo que le corresponde es “p@ssword”.</p>
+
+<img src="../img/dehash.png" alt="googling the hash shows the corresponding password" class="alignCenter border2">
+
+<p>Es necesario notar que este es sólo uno de los usos de los hashes, y que el material cifrado no tiene por qué ser una contraseña. Dejando eso de lado por el momento, y volviendo al tema original, previo a un ataque de fuerza bruta un atacante suele tener una lista de mails con el hash de sus contraseñas. Como sería inútil intentar determinar la contraseña a partir del hash, lo que se hace es hashear combinaciones de letras semi aleatorias hasta que una combinación devuelve el mismo hash que la contraseña. Si se tiene que a la contraseña le corresponde el hash “0d107d09f5bbe40cade3de5c71e9e9b7”, entonces se prueban todas las contraseñas posibles hasta que una devuelva ese mismo hash, en el caso de la imagen: “P@ssword”.</p>
+
+<img src="../img/brute-force-code.png" alt="what a successful brute force attack looks like" class="img100 alignCenter border2">
+
+<p>Un detalle que cabe destacar, es que si una contraseña puede contener números, minúsculas, mayúsculas y caracteres especiales, con tener 12 dígitos de largo ya representa 475 920 315 000 000 000 000 000 combinaciones posibles. Para tener una idea de la magnitud, esa cantidad en segundos ya es 1 100 803 veces más que la cantidad de segundos que pasaron desde el nacimiento del universo. En otras palabras, sí, son muchas combinaciones posibles. Sin embargo, también hay que tener en cuenta que no somos robots, y la gente suele tener contraseñas como “Qw3rty” y no “7D3h8{f8DV')xMg/WyW9”, como sugieren páginas como <a href=https://passwordsgenerator.net/>passwordsgenerator.net</a>.</p>
+
+<img src="../img/generated-password.png" alt="randomly generated password" class="border2 alignCenter">
+
+<p>Imagino que todos notaron el pie de la imagen que dice “remember your password: <span>7 DRIP 3 hulu 8 { fruit 8 DRIP VISA ‘ ) xbox MUSIC golf / WALMART yelp WALMART 9</span>”... <i>¿No?</i> No sé el resto de ustedes, pero yo llego a leer eso y termino invocando a 3 demonios en el proceso, ¿y se supone que me lo tengo que memorizar? Teniendo en cuenta el hecho de que además necesito una contraseña distinta para cada cuenta que hago, no hay forma de que me acuerde de lo que sea que es eso, y por eso mismo es que mis contraseñas, como las de casi cualquier otra persona, no son tan seguras como me gustaría creer.</p>
+
+<p>Hay que tener en cuenta que los atacantes están al tanto de esto, y no se molestan en probar las 475 920 315 000 000 000 000 000 combinaciones mencionadas antes (o más si la contraseña tiene más de 12 caracteres). Lo que se hace hoy en día para descubrir contraseñas es realizar un “ataque de diccionario”. Esto es, un ataque de fuerza bruta donde en vez de probar con todas las combinaciones posibles, se prueba con las contraseñas más comunes o también, contraseñas de filtraciones de datos previas, dado que muchos de los usuarios reúsan sus contraseñas en distintos sitios, con los números alternando entre 12 y 65% de la población dependiendo de la fuente. (mirar las <a href="../index/surveys.html">encuestas</a> para más información.)</p>
+
+<p>Estos diccionarios de contraseñas se encuentran internet, y si bien están los que contienen <a href=https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm>todas las contraseñas que alguna vez se filtraron</a> (1 493 677 782), la mayoría usa un diccionario menor que contenga algunos millones de contraseñas ya que esto le permite ganar acceso a más cuentas en una menor cantidad de tiempo. Como ejemplo está Joseph Bonneau, ganador del premio en ciberseguridad de NSA en 2013, quien realizó un <a href=https://www.lightbluetouchpaper.org/2011/02/09/measuring-password-re-use-empirically/>estudio sobre el porcentaje de usuarios que reúsan contraseñas</a>, usando como muestra contraseñas hasheadas de filtraciones de <a href=https://gawker.com/>Gawker</a> y rootkit.com. Usando un diccionario de 10 millones de contraseñas, logró crackear el 44% de las 81 000 contraseñas de Rootkit en tan solo 5 minutos. Y hay que tener en cuenta que esto fue con fines académicos, ya que cualquier atacante con mayor poder de procesamiento puede probar hasta 150 millones de contraseñas distintas por segundo.</p>
+
+<br><hr><br>
+
+<p>Para combatir los ataques de diccionario donde los atacantes prueban hashear las contraseñas más comunes hasta que un hash coincida, lo que se hace es agregarle una “Salt” (en español, sal) a la contraseña. Una Salt es un hilo de caracteres aleatorios que se le agrega a la contraseña antes de aplicarle la función hash, así al atacante no le queda otra opción que intentar la fuerza bruta pura (a menos que conozcan la salt).</p>
+
+<img src="../img/hashing.png" alt="example of hashing">
+
+<p>Este cuadro sacado de <a href=https://en.wikipedia.org/wiki/Salt_(cryptography)#Example_usage>Wikipedia</a> muestra claramente el uso de Salts aleatorias para el hash de contraseñas. Lo que es más, al crear una Salt distinta para cada usuario, por más de que estos tengan la misma contraseña nunca tendrán el mismo hash, de manera que la seguridad se incrementa dado que es prácticamente imposible que un hash se repita. Y volviendo al estudio de Joseph Bonneau sobre Gawker y Rootkit, este solo pudo determinar tantas contraseñas a partir de los hashes debido a un desastroso manejo de la seguridad de parte de ambas empresas. Gawker por su parte ya contó con <a href=https://www.lightbluetouchpaper.org/2010/12/15/the-gawker-hack-how-a-million-passwords-were-lost/>numerosas fallas de seguridad</a>, como acortar todas las contraseñas a 8 caracteres máximo antes de guardarlas con un salt simple, y Rootkit por el otro lado aplicó únicamente el hash MD5 sin una Salt, una función de hash que, como mencioné antes, ya es insegura debido a que existen tablas con las contraseñas más comunes y los hashes correspondientes (<a href=https://en.wikipedia.org/wiki/Rainbow_table>Rainbow tables</a>).</p>
+
+<p>Viendo casos como estos donde la culpa de los usuarios es mínima, y la falla de seguridad provino de parte de la empresa, se nota el peligro que presenta reutilizar contraseñas. Habiendo páginas que poco se esfuerzan por mantener tu información privada, ¿realmente usarías la misma contraseña para estos sitios que para tu banco? ¿Y para tu mail? El concepto de usar contraseñas únicas es uno que resurge entre artículos, pero se ve que, después de todo, <i>todos los caminos conducen a Roma</i>.</p>
+
+<p>Esto último es especialmente importante cuando se tiene en cuenta el Credential Stuffing (Relleno de credenciales), un concepto del que se habla más en detalle en el artículo <a href="problem-with-passwords.html">”Las contraseñas no son débiles, nosotros lo somos”</a>. En la página se analiza el uso de combolists de mails y contraseñas, pero hay que tener en cuenta que, como se mencionó acá, las combolists de sitios como <a href=https://combo-list.com/>Combo-list.com</a> suelen venir con hashes en vez de contraseñas en texto plano. Y son los ataques de fuerza bruta con diccionario los que se encargan de traducir esta información para luego venderla a un precio mayor.</p>
+
+<img src="../img/stuffing-vs-brute.jpg" alt="credential stuffing vs brute force attack" class="border2">
+
+<p>En resumen, los que se dedican a esto no suelen robar la información, sino que simplemente la desencriptan, a veces para revenderla, y otras veces para probarla ellos mismos en otros sitios. Similar a un productor de trigo que decide entre vender el grano o trabajarlo y vender harina, esto no es más que otra industria con sus correspondientes trabajadores con la diferencia de que estos trabajan al borde de la ley. Y esto lo explican páginas como Forbes.com cuando dicen que <a ref=https://www.forbes.com/sites/forbestechcouncil/2019/12/27/2020-the-year-of-combolist-as-a-service/?sh=577ef32d45dc>2020 será el año the “Combolist as a service”</a>, una predicción que hicieron a fines de 2019 y hoy por hoy es bastante acertada. Hackear es cada vez menos un hobby o un crimen y pasa a ser parte del día a día, casi como un trabajo. Y son estos hackers la razón por la que deberíamos estar preocupados.</p> 
+
+<p>En el comienzo del internet un hacker era aquél que conseguía servicio telefónico gratis, tiempo después se convirtió en aquél que veía hackear grandes empresas como desafíos. Pero hoy en día la rentabilidad de la industria llevó a que miles de personas ingresen únicamente por la recompensa, y son estos, los que perjudican a los usuarios corrientes y cruzan toda línea ética a los que deberíamos temer. Después de todo, lo único que se interpone entre nuestra información y estos atacantes son los desarrolladores de los sitios web, pero como ya vimos, estos también son humanos, y también cometen errores. Y razones como estas hacen que debamos cuidar de nuestra seguridad y no esperar a que otro lo haga por nosotros.</p>
+
+<p>Después de todo, una pequeña página como Rootkit nunca invertiría tantos fondos en ciberseguridad como Google, y por lo tanto no podemos confiarle la misma cantidad de información y esperar que la cuiden. Más importante, no podemos confiarle nuestra contraseña de Google y esperar que no sufran filtraciones de datos, cuando su presupuesto en ciberseguridad es tan abundante como la costa marítima en Bolivia. A fin de cuentas, uno puede pasar su vida culpando a los que fallan en desarrollar un sitio web seguro, pero estos sitios seguirán existiendo y seguirán siendo hackeados. Por eso es que si hoy tu cuenta de Rootkit es filtrada y con ella la contraseña de tu banco, se puede decir que el mayor error provino de tu parte. No hay mayor error que el de reutilizar contraseñas, y sin embargo los estudios demuestran que cada vez más gente lo hace. Por eso es que creo que hoy en día <span>el mayor riesgo para nuestra seguridad, somos nosotros mismos</span>.</p>
+
+
+
+</div>
+</div>
+
+<!-- END BLOG ENTRIES -->
+
+<!-- Introduction menu -->
+  <!-- About Card -->
+ <div class="w3-card w3-container w3-light-grey w3-border-light-grey" id="divright">
+      <div id="textright">
+      <h4><b>Índice</b></h4>
+     
+     <ul class="indexul">
+         <a href="/index.html"><li class="indexel">Home</li></a>
+         <a href="/index/introduction.html"><li class="indexel">Introducción</li></a>
+         <li class="indexli">Artículos
+            <ul>
+             <a href="/articles/problem-with-passwords.html"><li class="indexel">Las contraseñas no son débiles, nosotros lo somos</li></a>
+             <a href="/articles/http-vs-https.html"><li class="indexel">La verdad sobre los sitios "No seguros"</li></a>
+             <a href="/articles/phishing.html"><li class="indexel">Phishing, la verdadera amenaza al navegar por internet</li></a>
+             <a href="/articles/man-in-the-middle.html"><li class="indexel">Man in the Middle y WiFi Pineapples</li></a>
+             <a href="/articles/DDoS.html"><li class="indexel">"La rebelión de las máquinas" y ataques DDoS</li></a>
+             <a href="/articles/why-anonymity-myth.html"><li class="indexel">El anonimato y el negocio de la información</li></a>
+             <a href="/articles/brute-force-attacks.html"><li class="indexel">Ataques de fuerza bruta y los diccionarios de contraseñas</li></a>
+             <a href="/articles/perks-of-being-a-wallflower.html"><li class="indexel">"Las (des)ventajas de ser invisible"</li></a>
+             <a href="/articles/human-behavior.html"><li class="indexel">El comportamiento humano y el anonimato</li></a>
+            </ul>
+         </li>
+         <a href="/index/surveys.html"><li class="indexel">Encuestas</li></a>
+         <a href="/index/conclusion.html"><li class="indexel">Conclusión</li></a>
+         <a href="/index/bibliography.html"><li class="indexel">Bibliografía</li></a>
+     </ul>
+     
+      </div>
+    </div>
+  
+  
+<!-- END Introduction Menu -->
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</main>
+
+<!-- Footer -->
+<footer class="w3-container footer">
+    <div>
+  <h5><b>Contacto:</b></h5><p>Juan Manuel Díaz, <a href="mailto:juanma.diaz02@gmail.com">juanma.diaz02@gmail.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<title>CySec 101</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans">
+<style>
+body,h1,h2,h3,h4,h5 {font-family:sans-serif, "Raleway";}
+p, ul{font-family:"Raleway",verdana;}
+blockquote{font-family:"PT Sans", verdana;}
+</style>
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+
+<body class="w3-light-grey">
+
+<nav>
+ <a href="/index.html"><div id="logo">
+     <img src="/img/logo/favicon.png" alt="logo" id="imglogo">
+    <h5 class="ptSans" id="navLogo">CySec 101</h5>
+ </div></a>
+ <ul>
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/index/introduction.html">About</a></li>
+</ul></nav>
+ <main class="w3-content">
+ <img id="imgmain" src="../img/phishing-wallpaper.jpg" alt="insecure password alert box" class="img100">
+
+<!-- Grid -->
+<div class="w3-row divbigmomma">
+
+    <!-- Blog entry -->
+  
+<div class="w3-card-4 w3-white" id="divarticle">
+    <div class="w3-container">
+  <header><h1><b>Phishing, la verdadera amenaza al navegar por internet</b></h1></header>
+      <h5>Con <a href="#sporaHack">el testimonio de Pepi Maqueda</a>, <span class="w3-opacity">3 de noviembre 2020</span></h5>
+    </div>
+
+    <div class="w3-container" id="text">
+  
+  <p>Cuando se trata de ciberseguridad, podría decirse que no hay mayor amenaza que nosotros mismos. Siempre se habla de los hackers como si fuesen alguna mente maestra con una supercomputadora y no se bañaran hace muchas lunas, pero lo cierto es que cualquiera puede aprovecharse de las vulnerabilidades de otro, y ni siquiera se necesita mucho conocimiento. El tema del que voy a hablar ahora es uno que quería evitar porque poco está relacionado con <i>ataques</i> propiamente hablando, sino que es la ignorancia misma de las víctimas la que lo impulsa. Sin embargo, es también el caso más común de cibercrimen, y no podría hacer un seminario de ciberseguridad sin antes detenerme a hablar sobre él.</p>
+
+<p> Hoy en día es nuestra ignorancia misma la causa de que caigamos víctimas ante muchos de estos crímenes. Es nuestra falta de conocimiento sobre ciberseguridad la razón por la que nuestra seguridad sigue viéndose perjudicada, ya que, según el Instituto Nacional de Ciberseguridad (España), en 2019 <a href=https://www.osi.es/es/actualidad/blog/2018/12/05/sabias-que-el-95-de-las-incidencias-en-ciberseguridad-se-deben-errores>el 95% de las incidencias de ciberseguridad se debieron a errores humanos</a>.</p>
+
+<p>Este 95% está constituido por numerosos tipos de errores, y si bien uno es el de no proteger los dispositivos como se debe, es de hecho el menos relevante. Otros errores incluyen el mal manejo de contraseñas (creando contraseñas demasiado fáciles y reutilizarlas en otros sitios) y principalmente, caer en estafas sin siquiera dudarlo. A estas estafas donde el atacante asume otra identidad para ganarse tu confianza se les llama Phishing, y vienen en muchas formas.</p>
+
+<p>Las caras más conocidas del phishing incluyen, pero no se limitan a:</p>
+<ul><li><a href=https://es.wikipedia.org/wiki/Estafa_nigeriana>La estafa del príncipe nigeriano</a>. Donde el atacante se hace pasar por un príncipe que quiere mover su fortuna y necesita alguien en el exterior para hacerlo, dejándole en el proceso con el 20% del dinero. Esta viene en muchos tipos, incluyendo la esposa de Nelson Mandela, la hija del dictador de Libia y muchos otros. En algún momento del proceso piden una gran cantidad de dinero, pero que no se compara al monto prometido.</li>
+<li>Mujeres solteras por tu zona te quieren conocer. <i>No, no es cierto. Y probablemente ni siquiera sean mujeres.</i> Incluso hay historias de <a href=https://babe.net/2017/11/13/those-horny-singles-in-your-area-ads-yeah-its-a-dude-named-eric-and-we-talked-to-him-about-it-20936>hombres que se hacen pasar por mujeres solteras</a> como trabajo, por 17 dólares la hora.</li>
+<li>Un <a href=https://www.eldia.com/nota/2020-10-19-14-41-0-advierten-sobre-una-nueva-modalidad-de-ciber-estafa-con-un-mail-del-banco-cental-policiales>mail del banco diciendo que necesita datos personales con urgencia</a>. Siempre desde un correo desconocido pero similar a uno real, como Bancociudad@hotmail.com en vez de cobranzas@bancociudad.com.ar, el mail verdadero.</li>
+ <li>Un sitio web que se hace pasar por otro, como <a href=https://www.аррӏе.com.com>аррӏе.com</a> (la “<b>а</b>” es en realidad la del alfabeto cirílico, un caracter distinto a la “a” pero que dependiendo de la fuente se pueden ver iguales). Esto puede comprobarse copiando el URL en el navegador y viendo cómo a pesar de que parece decir “apple.com”, te lleva hacia otro dominio.</li></ul>
+
+<p>Así como el mail, estos sitios siempre tienen un nombre similar pero no igual al de una página conocida, esto lo detectan algunos navegadores como el Chrome y al hacer click en el link, te abre una advertencia. Además, Chrome traduce la URL a punycode, un lenguaje distinto para evitar que el usuario piense que se está en <a href=”https://www.apple.com/”>apple.com</a> cuando en realidad se está en una imitación. Esta es una de las medidas de seguridad que implementó Google para ayudarnos a notar la diferencia, porque como explica <a href=https://www.linkedin.com/in/emilyschechter/>Emily Schechter</a> en una de sus <a href=https://www.youtube.com/watch?v=UD-ukjVoeLc>charlas sobre el problema con los URL</a>, las personas somos muy malas entendiendo los URL. Desde no saber qué significa el HTTPS al principio, hasta pensar que estamos en la página correcta solo porque se <span>ve</span> como dicha página, por más de que el link sea muy distinto (caso típico de phishing).</p>
+
+<p>Un claro ejemplo de esto último es la encuesta que realizó <a href=https://twitter.com/NordVPN>@NordVPN</a> en twitter en el mes de Octubre:</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Which of these URLs probably leads to a phishing website (a fake website set up by scammers to extract your sensitive data)?</p>&mdash; NordVPN (@NordVPN) <a href="https://twitter.com/NordVPN/status/1318888002123403267?ref_src=twsrc%5Etfw">October 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>La pregunta que realiza es la de “cuál de las opciones lleva a un sitio malicioso?”, y como muestra la encuesta, más de la mitad de la gente pensó que <a href=https://www.baidu.com/>Baidu</a>, una empresa china especializada en tecnología e internet (el Google de China), era malicioso solo por ser HTTP, mientras el otro link, <a href=http://googie.com/>googie.com</a>, pasó desapercibido por usar una i mayúscula en su dominio (Google vs GoogIe, casi iguales). Cabe destacar que, si bien Googie parece ser un caso de phishing, que tenga un nombre similar no significa que sea phishing. Además, Baidu ya ha tenido problemas de seguridad, como mencioné en artículos anteriores.</p>
+
+<p>En resumen, la cantidad de maneras en las que un atacante puede engañar a un usuario, está limitada únicamente por su creatividad. Ya sea con sitios como <a href=https://www.аррӏе.com.com>аррӏе.com</a> o <a href=http://googie.com/>googIe.com</a>, la gente es muy fácil de engañar cuando creen que están interactuando con una página en la que confían, y si no fuese por el navegador que emite advertencias y expresa links maliciosos en punycode como <a href=https://www.xn--80ak6aa92e.com/>xn--80ak6aa92e.com</a> en vez de como en realidad debería verse, <a href=https://www.аррӏе.com.com>аррӏе.com</a>, estaríamos condenados. Esto me lleva al segundo punto del que quería hablar, y es la repercusión a gran escala de estafas como estas. </p>
+
+<br><hr><br>
+<div class="clearfix">
+<img src="../img/pepi.jpg" class="imgProfile">
+<p>Mientras investigaba este tipo de ataques tuve la oportunidad de entrevistar a <a href=https://www.linkedin.com/in/maria-jose-maqueda-49103010/?originalSubdomain=ar>María José Maqueda</a>, Directora en <a href=https://www.latamone.com/>LatamONE.com</a>, una empresa de Marketing situada a lo largo de Latinoamérica, con oficinas en Miami, Asunción y Buenos Aires. El motivo de la entrevista fue que hace ya unos años, la empresa había recibido un correo de phishing. Este correo sin embargo no había sido de la misma clase que los de la estafa nigeriana mencionada anteriormente, sino que había sido enviado por <span>Spora</span>, un malware complejo de origen ruso que tuvo su mayor etapa de auge a principios de 2017, como lo explica <a href=https://blog.malwarebytes.com/threat-analysis/2017/03/spora-ransomware/>MalwareBytes.com/spora</a>.</p>
+</div>
+
+<p>Cómo contó Pepi (María José), el mail llegó como una factura de uno de sus proveedores, con un archivo adjunto donde contenía la información. Este archivo sin embargo, que se ejecutaba a penas se realizaba la descarga como los pdf, no se podía abrir. Clásico archivo que descargas y váyase a saber por qué, no lo podés leer. <i>¿A quién no le ha pasado? ¿No?</i> Esto sin embargo, fue el comienzo de los problemas. Desde ese momento la computadora de administración, la cual tiene acceso directo al servidor, no podía abrir archivos, se intentaba abrir un archivo XLS y no había otra respuesta que “Error”, y lo que siguió fue cada vez más catastrófico. En palabras de Pepi:</p>
+
+<blockquote>[...] y cuando lo abrió el archivo estaba totalmente roto. Con roto quiero decir que estaba como si fuera un jeroglífico con caracteres rarísimos, que no decían nada... un archivo inservible. Intentamos con otro archivo y el mensaje se repetía.
+Pensábamos que había sido un VIRUS y corrimos antivirus… pero no había nada! ...y en cuestión de minutos TODO el Directorio que teníamos pasó a estar inaccesible con el mismo mensaje.... Archivos, Imágenes, Sistema Contable...quedamos sin acceso a NADA. Se fue pasando de maquina en maquina hasta que llegó al Servidor.</blockquote>
+
+<p>Cabe destacar la velocidad del proceso, no se necesitaron más que unos pocos minutos para que el programa encripte todo el directorio de la empresa. Había sido el trabajo de expertos, tomando el control repentinamente con nada más que un mail para entrar. Y por si la historia no parecía de película hasta el momento… se pone peor.</p>
+
+<p>Tras reiniciar las computadoras estas automáticamente abrían el navegador con la página Spora.bz, un sitio ya cerrado e inaccesible. En el mismo se detallaba lo ocurrido y ofrecía un servicio; desencriptar todos los archivos a cambio de un pago, en Bitcoins. Esto es lo que se conoce como un ransomware, un software diseñado para encriptar archivos ya pedir a cambio una “ransom”, un rescate a cambio de la llave de desencriptación. (A todo esto, 2017, ¿cuánta gente sabía cómo comprar Bitcoins? ¿No?) Ya se pueden imaginar la odisea que habrán sido esos días para la empresa, y para los que no, está la historia contada por Pepi misma hace 3 años, <a href="#sporaHack">al final de la página</a>.</p>
+
+<p>Y para los que llegaron hasta acá esperando una moraleja, sólo les puedo decir: <span><i>No confíen en extraños, y estén preparados para lo peor.</i></span> Hoy en día la empresa de Pepi trabaja con almacenamiento en la nube, limitando el acceso de las computadoras al mismo, y con backups automáticos todos los días. Y si bien una empresa nunca puede estar preparada contra todo, hay que reconocer que no van a caer dos veces en la misma trampa.</p>
+
+
+<br><hr><br>
+<!-- Resumen del hackeo 2017 -->
+
+<span>Pepi Maqueda:</span>
+<blockquote id="sporaHack">
+<h5>Apr 11, 2017. <span>LOS HACKERS EXISTEN!</span></h5>
+<p>Buenas! Esto lo escribo porque sé que puede ayudar a alguno a prevenir la desesperación que vivimos en la Agencia la semana pasada....es un toque largo, pero si lo hubiera leido....quizas no me pasaba.</p>
+
+<p>Trabajábamos normalmente, hasta que a última hora del lunes pasado, intentamos acceder a un Archivo XLS, y el sistema nos decía que el formato no era valido....y cuando lo abrió el archivo estaba totalmente Roto. Con roto quiero decir que estaba como si fuera un jeroglífico con caracteres rarísimos, que no decían nada....un archivo inservible. Intentamos con otro archivo y el mensaje se repetía.</p>
+
+<p>Pensábamos que había sido un VIRUS y corrimos antivirus....pero no había nada! .....y en cuestión de minutos TODO el Directorio que teníamos pasó a estar inaccesible con el mismo mensaje.... Archivos, Imágenes, Sistema Contable...quedamos sin acceso a NADA. Se fue pasando de maquina en maquina hasta que llego al Servidor.</p>
+
+<p>Reiniciamos las maquinas, y se abrió el buscador automáticamente con una landing cargada....y nos comunicaba que todos nuestros archivos se encontraban ENCRIPTADOS, hasta nos daba un ID con un código de encriptación.</p>
+
+<p>Debo decir que la Landing era muy clara, hasta un chat/ blog online para consultar dudas y ves cómo interactúan otros usuarios en la misma situación, usuarios de todo el mundo. Estos Hackers porque no se me ocurre de qué otra manera llamarlos, se hacen llamar SPORA, y la landing te guia paso a paso, para que puedas liberar el Hackeo, esto es así como lo cuento, no es una serie de AXN o de SONY, esto nos pasó a nosotros en la agencia!</p>
+
+<p>La liberación consiste en pagar el RESCATE de nuestros archivos, en BITCOINS, para que nos den acceso a un Archivo .exe que contiene la KEY de desencriptación.....Todo nos parecía una locura....A su vez había un pago extra para que EXTRAIGA SPORA de los equipos, y por último un pago por INMUNIDAD....para q no nos vuelva a pasar.</p>
+
+<p>Nada de esto fue rápido.....tuvimos que buscar información de SPORA, encontré varias notas, y así entendimos de que se trataba y que lo que estaba pasando era real. El segundo paso fue ver como comprar BITCOINS, para el que no sabe, esta es la supuesta moneda del futuro, que no tiene trazabilidad y por último tomar la decisión de avanzar y rogar que funcionara!</p>
+<p>En el día de ayer, una semana después del Ciberataque, logramos comprar BITCOINS, transferimos a la cuenta que nos dijo SPORA, y le pagamos al Hacker. Spora nos dio un archivo ejecutable y casi por arte de magia empezó a desencriptar todo! Bastante prolijo todo, parecía salido de una serie de ciencia ficción.</p>
+
+<p>Con todo esto, solo quiero advertirles que este HACKEO no es detectado con los Antivirus, generalmente se disfraza de un mail de algún contacto a través de *Phishing* o suplantación de identidad. No llega como un archivo .exe o ejecutable, no es un troyano, sino que puede hacerlo a través de un link, o de un PDF o un XLS, o cualquier tipo de archivo. Nosotros NO encontramos cuál fue el canal de acceso.</p>
+
+<p>Para evitar que les pase esto lo mejor es que hagan Back up externo, con una constancia DESQUICIADA.....semanal o diaria....Lo que puedan! y en el caso de tener la misma mala suerte, en vez de pasar por esto usan el Back up externo y limpian los equipos reinstalando Todo. Nuestro Back up había quedado comprometido en el mismo Servidor, por lo tanto estaba encriptado! Estén atentos porque esto ya le paso a varios y está siendo más común de lo que se imaginan....
+Todo fue muy intenso.</p>
+<p>Saludos y suerte a todos!</p>
+</blockquote>
+
+
+</div>
+</div>
+
+<!-- END BLOG ENTRIES -->
+
+<!-- Introduction menu -->
+  <!-- About Card -->
+  <div class="w3-card w3-container w3-light-grey w3-border-light-grey" id="divright">
+      <div id="textright">
+      <h4><b>Índice</b></h4>
+     
+     <ul class="indexul">
+         <a href="/index.html"><li class="indexel">Home</li></a>
+         <a href="/index/introduction.html"><li class="indexel">Introducción</li></a>
+         <li class="indexli">Artículos
+            <ul>
+             <a href="/articles/problem-with-passwords.html"><li class="indexel">Las contraseñas no son débiles, nosotros lo somos</li></a>
+             <a href="/articles/http-vs-https.html"><li class="indexel">La verdad sobre los sitios "No seguros"</li></a>
+             <a href="/articles/phishing.html"><li class="indexel">Phishing, la verdadera amenaza al navegar por internet</li></a>
+             <a href="/articles/man-in-the-middle.html"><li class="indexel">Man in the Middle y WiFi Pineapples</li></a>
+             <a href="/articles/DDoS.html"><li class="indexel">"La rebelión de las máquinas" y ataques DDoS</li></a>
+             <a href="/articles/why-anonymity-myth.html"><li class="indexel">El anonimato y el negocio de la información</li></a>
+             <a href="/articles/brute-force-attacks.html"><li class="indexel">Ataques de fuerza bruta y los diccionarios de contraseñas</li></a>
+             <a href="/articles/perks-of-being-a-wallflower.html"><li class="indexel">"Las (des)ventajas de ser invisible"</li></a>
+             <a href="/articles/human-behavior.html"><li class="indexel">El comportamiento humano y el anonimato</li></a>
+            </ul>
+         </li>
+         <a href="/index/surveys.html"><li class="indexel">Encuestas</li></a>
+         <a href="/index/conclusion.html"><li class="indexel">Conclusión</li></a>
+         <a href="/index/bibliography.html"><li class="indexel">Bibliografía</li></a>
+     </ul>
+     
+      </div>
+    </div>
+  
+<!-- END Introduction Menu -->
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</main>
+
+<!-- Footer -->
+<footer class="w3-container footer">
+    <div>
+  <h5><b>Contacto:</b></h5><p>Juan Manuel Díaz, <a href="mailto:juanma.diaz02@gmail.com">juanma.diaz02@gmail.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

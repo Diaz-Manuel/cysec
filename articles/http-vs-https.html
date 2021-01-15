@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<title>CySec 101</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans">
+<style>
+body,h1,h2,h3,h4,h5 {font-family:sans-serif, "Raleway";}
+p{font-family:"Raleway",sans-serif;}
+</style>
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+
+<body class="w3-light-grey">
+
+<nav>
+ <a href="/index.html"><div id="logo">
+     <img src="/img/logo/favicon.png" alt="logo" id="imglogo">
+    <h5 class="ptSans" id="navLogo">CySec 101</h5>
+ </div></a>
+ <ul>
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/index/introduction.html">About</a></li>
+</ul></nav>
+ <main class="w3-content">
+ <img id="imgmain" src="../img/unsecure-wallpaper.jpg" alt="insecure password alert box" class="img100">
+
+<!-- Grid -->
+<div class="w3-row divbigmomma">
+
+    <!-- Blog entry -->
+  
+<div class="w3-card-4 w3-white" id="divarticle">
+    <div class="w3-container">
+  <header><h1><b>¿Qué hace inseguros a los sitios "No seguros"? HTTP vs HTTPS</b></h1></header>
+      <h5>Breve análisis de los riesgos que presenta navegar por sitios no seguros, <span class="w3-opacity">2 de noviembre 2020</span></h5>
+    </div>
+
+    <div class="w3-container" id="text">
+    <p>Todo el mundo en algún momento notó el "http://" al principio de un link, pero no son tantos los que entienden su significado. El HyperText Transfer Protocol (HTTP) es un protocolo empleado para la transferencia de información entre un cliente y un servidor, entre usted y cualquier página web a la que acceda. Se basa en que un cliente realice una petición al servidor, y este le devuelva una respuesta, por ejemplo, la página a la que quiere acceder. Sin embargo, este protocolo de 1990 dejó de ser el estándar hace unos años, y ahora tomó su lugar el HyperText Transfer Protocol Secure (HTTPS).</p>
+
+<p>La mayor diferencia entre estos dos es que el HTTPS encripta todos los datos durante la transmisión del cliente al servidor (y viceversa) y también, verifica la autenticidad de este último, te confirma que el servidor al que te conectaste es verdaderamente quien dice ser. Probablemente la mayor razón por la que se emplea el HTTPS en casi todos los sitios es por la influencia de Google y Firefox. Como lo explica <a href=https://www.linkedin.com/in/emilyschechter/>Emily Schechter</a> en una de sus conferencias, The trouble With URLs.</p>
+<iframe width="854" height="480" src="https://www.youtube.com/embed/UD-ukjVoeLc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>En el video se habla de cómo Google ha llevado a cabo numerosos proyectos para alcanzar la seguridad en línea, incluyendo el de “Safe Browsing”, liderado por ella. La medida más importante de este proyecto fue la de ocultar partes de la URL como el “https://” y reemplazarlo por el símbolo de un candado, para así evitar el exceso de información “ilegible” y mostrarla en su lugar de manera que todos la puedan entender. Sin embargo, en 2018 la empresa decidió sacar el candado verde porque muchos lo confundían con una cartera verde, y en vez de anunciar que un sitio era seguro, se optó por normalizar la seguridad, y en su lugar, anunciar cuando un sitio no cumplía los estándares de seguridad.</p>
+
+<img src="../img/http-insecure.png" class="img100">
+<p>La relevancia de esto es que hoy en día, todos los HTTPS son considerados seguros mientras los HTTP inseguros, cuando esto no es necesariamente el caso. Para empezar, si bien es verdad que un sitio use HTTPS significa que su identidad está validada y toda la información que mandes se encripta hasta llegar al servidor, esto no significa que tengan buenas intenciones. La encriptación dificulta los ataques <a href="man-in-the-middle.html">Man In The Middle</a>, donde un tercero espía tu conversación con el servidor, leyendo todos los datos que mandas (incluidos usuario y contraseña cuando ingresas sesión). Pero esta información se desencripta cuando llega al servidor, y si este último quiere guardar tu información privada, puede hacerlo.</p>
+
+<p>HTTP por el otro lado no es malicioso por naturaleza. Es cierto que no encripta tu información (o al menos no lo suficiente), pero esto no significa que tengan otras intenciones. El verdadero problema con HTTP es la cantidad de puertas que abre para que un atacante haga lo que le plazca, ya que no solo puede leer toda la información que se transmite, sino que también puede modificarla. Como explica Troy Hunt en el video debajo, un Man In The Middle (MITM) podría modificar la página que estás viendo, mostrarte otra página mientras te hace pensar que seguís en la misma, leer las cookies de tu navegador (lo que incluye poder iniciar sesión en otros sitios, haciéndose pasar por vos), cambiar la contraseña de administrador de tu proxy, usar el procesador de tu computadora para minar bitcoins y hasta ejecutar script en tu navegador para perjudicar a otras páginas que sí sean seguras, como el ataque que lanzó China para perjudicar a GitHub (<a href=https://citizenlab.ca/2015/04/chinas-great-cannon/>China’s Great Cannon</a>).</p>
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/_BNIkw4Ao9w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<hl><p>En retrospectiva, HTTPS es un protocolo que debería usarse en todos los casos, ya sea que se esté hablando de una página que maneja información sensible o no. Y, sin embargo, uno se sorprendería al ver la lista de sitios que 30 años después, todavía utilizan HTTP para establecer conexiones. Esta lista, disponible en <a href=https://whynohttps.com/>WhyNoHttps.com</a>, incluye paginas como: <a href=http://mercadolibre.com/>mercadolibre.com</a>, <a href=http://afip.gob.ar/sitio/externos/default.asp>afip.gob.ar</a> y <a href=http://www.gov.cn/>gov.cn</a>, la página del gobierno chino. Si bien cabe destacar que estos sitios usan HTTPS para la mayoría de sus páginas, solo se necesita una que use HTTP para realizar cualquiera de los ataques mencionados anteriormente, y ese es el caso para los 3 links de arriba.</p>
+    </div>
+</div>
+
+<!-- END BLOG ENTRIES -->
+
+<!-- Introduction menu -->
+  <!-- About Card -->
+  <div class="w3-card w3-container w3-light-grey w3-border-light-grey" id="divright">
+      <div id="textright">
+      <h4><b>Índice</b></h4>
+     
+     <ul class="indexul">
+         <a href="/index.html"><li class="indexel">Home</li></a>
+         <a href="/index/introduction.html"><li class="indexel">Introducción</li></a>
+         <li class="indexli">Artículos
+            <ul>
+             <a href="/articles/problem-with-passwords.html"><li class="indexel">Las contraseñas no son débiles, nosotros lo somos</li></a>
+             <a href="/articles/http-vs-https.html"><li class="indexel">La verdad sobre los sitios "No seguros"</li></a>
+             <a href="/articles/phishing.html"><li class="indexel">Phishing, la verdadera amenaza al navegar por internet</li></a>
+             <a href="/articles/man-in-the-middle.html"><li class="indexel">Man in the Middle y WiFi Pineapples</li></a>
+             <a href="/articles/DDoS.html"><li class="indexel">"La rebelión de las máquinas" y ataques DDoS</li></a>
+             <a href="/articles/why-anonymity-myth.html"><li class="indexel">El anonimato y el negocio de la información</li></a>
+             <a href="/articles/brute-force-attacks.html"><li class="indexel">Ataques de fuerza bruta y los diccionarios de contraseñas</li></a>
+             <a href="/articles/perks-of-being-a-wallflower.html"><li class="indexel">"Las (des)ventajas de ser invisible"</li></a>
+             <a href="/articles/human-behavior.html"><li class="indexel">El comportamiento humano y el anonimato</li></a>
+            </ul>
+         </li>
+         <a href="/index/surveys.html"><li class="indexel">Encuestas</li></a>
+         <a href="/index/conclusion.html"><li class="indexel">Conclusión</li></a>
+         <a href="/index/bibliography.html"><li class="indexel">Bibliografía</li></a>
+     </ul>
+     
+      </div>
+    </div>
+  
+<!-- END Introduction Menu -->
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</main>
+
+<!-- Footer -->
+<footer class="w3-container footer">
+    <div>
+  <h5><b>Contacto:</b></h5><p>Juan Manuel Díaz, <a href="mailto:juanma.diaz02@gmail.com">juanma.diaz02@gmail.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

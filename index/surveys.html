@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<title>CySec 101</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/articles/article.css">
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+p, ul{font-family:"Raleway",verdana;}
+blockquote{font-family:"PT Sans", verdana;}
+body,h1,h2,h3,h4,h5 {font-family:sans-serif, "Raleway";}
+p{font-family:"Raleway",sans-serif;}
+</style>
+<link rel="shortcut icon" type="image/jpg" href="/img/logo/favicon.png"/>
+
+<body class="w3-light-grey">
+
+<nav>
+ <a href="/index.html"><div id="logo">
+     <img src="/img/logo/favicon.png" alt="logo" id="imglogo">
+    <h5 class="ptSans" id="navLogo">CySec 101</h5>
+ </div></a>
+ <ul>
+  <li><a href="/index.html">Home</a></li>
+  <li><a href="/index/introduction.html">About</a></li>
+</ul></nav>
+
+ <main class="w3-content">
+ <img id="imgmain" src="../img/surveys-wallpaper.jpg" alt="insecure password alert box" class="img100">
+
+<!-- Grid -->
+<div class="w3-row divbigmomma">
+
+    <!-- Blog entry -->
+  
+<div class="w3-card-4 w3-white" id="divarticle">
+    <div class="w3-container">
+  <header><h1><b>Encuesta sobre la reutilización de contraseñas</b></h1></header>
+      <h5>Y cómo se compara con resultados preexistentes.</h5>
+    </div>
+
+    <div class="w3-container divparentleft" id="text">
+  
+
+  <p>El fin de la encuesta era determinar cuál era el porcentaje de gente que reutiliza la misma contraseña en distintas cuentas (pero no todas), y cómo este número varía según la edad. Este porcentaje ya se intentó calcular numerosas veces a través de distintos métodos, desde hacer encuestas como la mía hasta comparar mails y contraseñas a lo largo de bases de datos de credenciales filtradas, en busca de repeticiones.</p>
+
+<p>Antes de comenzar, hay que tener en cuenta que los porcentajes preexistentes varían entre 12% y 65% dependiendo de la fuente. <a href=https://dl.acm.org/doi/10.1145/1242572.1242661>El primer estudio de manera empírica</a> con una muestra de medio millón de personas a lo largo de 3 meses, sugirió que en 2007 el 12% de la muestra reutilizaba alguna de sus contraseñas. Este también fue el primer estudio a larga escala de su clase, y buscaba determinar otros factores también, como por ejemplo cuánto tarda el usuario promedio en olvidarse de una contraseña.</p>
+
+<p><a href=https://www.lightbluetouchpaper.org/2011/02/09/measuring-password-re-use-empirically/>Otro de los estudios</a> es el de <a href=https://www.lightbluetouchpaper.org/author/jcb82/>Joseph Bonneau</a>, quien comparó las contraseñas filtradas de dos páginas, Gawker y Rootkit, y descubrió que entre el 31 y 49% de los usuarios reutilizaron su contraseña. Al observar los números hay que tener en cuenta que se están comparando únicamente dos sitios web, y del 69% que no reutilizó su contraseña, es muy probable que la mayoría sí lo hayan hecho en otro sitio. Esto nos lleva al último estudio, realizado por Google en febrero de 2019.</p>
+
+<img src="../img/google-survey.png" alt="cybersecurity survey by Google" class="img100 border2">
+
+<p>El <a href=http://services.google.com/fh/files/blogs/google_security_infographic.pdf>estudio de Google sobre ciberseguridad</a>, una encuesta realizada a 3000 personas a partir de 16 años, revela que el 65% de la gente reúsa contraseñas. Lo que es más, nos dice que el 13% de los adultos utiliza una única contraseña para todas sus cuentas. Todo esto suponiendo que los datos vistos son ciertos y no interceptaron el tráfico, teniendo en cuenta que la fuente es una página HTTP. Gracias Google por eso (ver <a href="../articles/http-vs-https.html">HTTP vs HTTPS</a> para entender por qué HTTP no es seguro).</p>
+
+<br><hr><br>
+
+<p>Para el seminario encuesté a 184 personas a partir de 10 años, con los resultados disponibles a continuación. O en caso de que prefieran, también está la <a href=https://docs.google.com/forms/d/e/1FAIpQLSfnGwIXND0MaW2S6BgmOjiF_MfJdA5F0TTTyyOQquPYJ3NyEw/viewanalytics>versión interactiva</a>.</p>
+
+<img src="../img/survey.png" class="border2" alt="survey results">
+
+<p>Las respuestas de la encuesta muestran que El 51% de las personas encuestadas no reúsan contraseñas mientras casi el 49% confiesa hacerlo. Sin embargo, si en vez de tomar su palabra se calculara la cantidad de personas que reúsan contraseñas (cualquiera que tenga menos contraseñas que cuentas), daría que en realidad, como mínimo el 75% de los encuestados ingresan una misma contraseña en distintos sitios. Esto sería tomando en cuenta todos los que dijeron tener más de 15 cuentas (97 personas), y entre ellos fijarse cuántos tienen menos de 11 contraseñas, debido a un error mío al hacer las preguntas (65). Además, para que sea más acertado, hace falta sumarle la cantidad de personas que tienen más de 30 cuentas, pero menos de 20 contraseñas (8).</p>
+
+<p>Este índice es bastante más alto que el calculado por Google, y más alto que cualquiera que haya encontrado en internet. Las únicas explicaciones que podrían justificar esto son que la muestra no sea representativa, o sea que casualmente las 184 personas que encuesté se preocupaban muy poco por su ciberseguridad, o que el cambio en el porcentaje se deba a que mi muestra incluye un mayor rango de edades. Para corroborar la segunda teoría, decidí calcular el porcentaje de gente que reúsa sus contraseñas dependiendo del rango de edad al que pertenecen.</p>
+
+<p>Resulta que de las 71 personas que dijeron ser mayor a 18 años y tener más de 15 cuentas, el porcentaje mínimo de reutilización de contraseñas se reduce al 70%. Es más bajo que el total pero aun así sigue siendo alto, lo que lleva a pensar que la primera opción también debe ser cierta. En otras palabras, el 70% de los adultos de mi círculo parece preocuparse poco y nada por la seguridad de sus cuentas.</p>
+
+<p>El caso es muy distinto para los jóvenes de 18 años y menos. El porcentaje mínimo en este caso sube hasta un 92%, esto es, 9 de cada 10 chicos que repiten su contraseña de una cuenta a otra como si no hubiera consecuencias. Sin embargo, para no generar la imagen equivocada, debería confesar que hasta el comienzo del seminario yo pertenecía a ese 92%. El proceso que involucró el seminario, fuentes que tuve que leer, me hicieron darme cuenta del peligro que representa el hábito de repetir contraseñas, y si hoy en día recomiendo a todos usar un Password Manager, sería hipócrita no usar uno yo mismo.</p>
+
+<p>Volviendo a los resultados de la encuesta, faltó mencionar al 4.44% que tratan las contraseñas como si fuesen familia, una para toda la vida. Lo más sorprendente es el porcentaje de personas de cada rango de edad que acabó en este grupo, con el 5.55% de los encuestados entre 19 y 25 años utilizando una única contraseña para todo, mientras las personas entre 15 y 18 tienen un porcentaje de tan solo 2.94%. Uno creería que la gente suele crear más contraseñas cuando las necesita para cosas como el banco, pero esto difícilmente parece ser el caso.</p>
+
+<p>Cabe destacar que para hacer todas las cuentas se usó la planilla con todas las respuestas, y no alcanza con solo los gráficos para reproducirlas. Para aquellos que quieran corroborar los datos, o simplemente realizar nuevos, pueden usar <a href=https://docs.google.com/spreadsheets/d/e/2PACX-1vSDmvvJkdPCRcsq_aX3FLLjKoVrN8uA4bcIMxUdQtez8PtmIABPQcfPEi-ZPtAj99veXVrFWs7Uktn8/pubhtml?gid=910918370&single=true>la planilla con las respuestas</a>. Y no se olviden, los números dicen mucho más de lo que parece.</p>
+
+<br><hr><br>
+
+<p>Como ejemplo de esto último pondría el foco nuevamente en la diferencia entre la proporción de gente que reúsa contraseñas dependiendo del rango de edades al que pertenecen. Los números dan una visión objetiva de la situación, mientras la interpretación es subjetiva, y así como yo dije que la preocupación por la ciberseguridad es poca en los jóvenes, cualquiera podría decir que la diferencia se debe a la desconfianza que le tienen los adultos mayores a las máquinas.</p>
+
+<p>Sin embargo, por más subjetivo que pueda sonar, me parece que todos estamos de acuerdo en que estos porcentajes representan un problema. La explicación detrás de los mismos podría ser la despreocupación de parte de que no hay nada que valga la pena proteger, hasta simplemente la desinformación respecto a las consecuencias. Pero de cualquier manera lo que falta es conciencia respecto a las consecuencias y porqué es que todos recomiendan cambiar contraseñas, hacerlas difíciles y, sobre todo, únicas. Y es con el fin de generar y alimentar esta conciencia que sugerí organizar una charla de ciberseguridad en el colegio, ya que me parece la mejor forma de llegar a los jóvenes y al mismo tiempo, de dejar una huella.</p>
+
+<p>Esta huella que quiero dejar no sería en el colegio, sino en los demás. Porque el colegio es un lugar al que voy desde que tengo un año, ya soy parte de él como él es parte de mí, pero este no es el caso para las camadas que vendrán con el tiempo. Y si mediante esta charla en marzo de 2021 logro que alguien se interese por la ciberseguridad, incluso tiempo después de haber finalizado mi seminario, entonces habré cumplido mi meta. Y si bien es una temática que me encanta, también reconozco que hay expertos que la pueden explicar mucho mejor que yo. Por esta razón es que me comuniqué con muchos de ellos y ya conseguí la confirmación de <a href=https://www.linktr.ee/securetech_arg>Mariano del Río</a> quien se dedica a organizar y dar presentaciones sobre ciberseguridad, <a href=https://www.linkedin.com/in/ginocortiprofesionalit/?locale=es_ES>Gino Corti</a> quien es profesor y ha participado de numerosos cursos y charlas de ciberseguridad, y también la posibilidad de <a href=https://www.linkedin.com/in/santiago-barclay-328784118/>Santiago Barclay</a>, Head of cybersecurity en <a href=https://www.linkedin.com/company/aperargentina/>Aper</a>, ex analista de Seguridad Informática del Poder Judicial de la Nación y Licenciado en Sistemas de Información de las Organizaciones, Administración y gestión de organizaciones.</p>
+  
+</div>
+</div>
+
+<!-- END BLOG ENTRIES -->
+
+<!-- Introduction menu -->
+  <!-- About Card -->
+  <div class="w3-card w3-container w3-light-grey w3-border-light-grey" id="divright">
+      <div id="textright">
+      <h4><b>Índice</b></h4>
+     
+     <ul class="indexul">
+         <a href="/index.html"><li class="indexel">Home</li></a>
+         <a href="/index/introduction.html"><li class="indexel">Introducción</li></a>
+         <li class="indexli">Artículos
+            <ul>
+             <a href="/articles/problem-with-passwords.html"><li class="indexel">Las contraseñas no son débiles, nosotros lo somos</li></a>
+              <a href="/articles/http-vs-https.html"><li class="indexel">La verdad sobre los sitios "No seguros"</li></a>
+             <a href="/articles/phishing.html"><li class="indexel">Phishing, la verdadera amenaza al navegar por internet</li></a>
+             <a href="/articles/man-in-the-middle.html"><li class="indexel">Man in the Middle y WiFi Pineapples</li></a>
+             <a href="/articles/DDoS.html"><li class="indexel">"La rebelión de las máquinas" y ataques DDoS</li></a>
+             <a href="/articles/why-anonymity-myth.html"><li class="indexel">El anonimato y el negocio de la información</li></a>
+             <a href="/articles/brute-force-attacks.html"><li class="indexel">Ataques de fuerza bruta y los diccionarios de contraseñas</li></a>
+             <a href="/articles/perks-of-being-a-wallflower.html"><li class="indexel">"Las (des)ventajas de ser invisible"</li></a>
+             <a href="/articles/human-behavior.html"><li class="indexel">El comportamiento humano y el anonimato</li></a>
+            </ul>
+         </li>
+         <a href="/index/surveys.html"><li class="indexel">Encuestas</li></a>
+         <a href="/index/conclusion.html"><li class="indexel">Conclusión</li></a>
+         <a href="/index/bibliography.html"><li class="indexel">Bibliografía</li></a>
+     </ul>
+     
+      </div>
+    </div>
+  
+<!-- END Introduction Menu -->
+
+<!-- END GRID -->
+</div>
+
+<!-- END w3-content -->
+</main>
+
+<!-- Footer -->
+<footer class="w3-container footer">
+    <div>
+  <h5><b>Contacto:</b></h5><p>Juan Manuel Díaz, <a href="mailto:juanma.diaz02@gmail.com">juanma.diaz02@gmail.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
